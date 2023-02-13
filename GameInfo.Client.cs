@@ -1,22 +1,24 @@
-﻿#if !SERVER
+﻿// this only example how devide client/server side logic
 
-using NSL.SocketCore.Utils.Buffer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// #if !SERVER
 
-namespace NSL.Node.RoomServer.Shared
-{
-    public partial class GameInfo
-    {
-        //example for client handle
-        // private void testCommand_handle(PlayerInfo player, InputPacketBuffer buffer)
-        // {
-        //     Debug.Log($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
-        // }
-    }
-}
+// using NSL.SocketCore.Utils.Buffer;
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Text;
+// using System.Threading.Tasks;
 
-#endif
+// namespace NSL.Node.RoomServer.Shared
+// {
+//     public partial class GameInfo
+//     {
+//         // example for client handle
+//         private void testCommand_handle(PlayerInfo player, InputPacketBuffer buffer)
+//         {
+//             Debug.Log($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
+//         }
+//     }
+// }
+
+// #endif

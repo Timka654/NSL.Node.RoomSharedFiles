@@ -16,7 +16,8 @@ namespace NSL.Node.RoomServer.Shared
         {
             RoomInfo = roomInfo;
 
-            roomInfo.RegisterHandle(11, testCommand_handle);
+            // example
+            // roomInfo.RegisterHandle(11, testCommand_handle);
         }
     }
 }
