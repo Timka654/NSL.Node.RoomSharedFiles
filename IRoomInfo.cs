@@ -16,7 +16,9 @@ namespace NSL.Node.RoomServer.Shared
         void SendTo(PlayerInfo player, OutputPacketBuffer packet, bool disposeOnSend = true);
 
         void RegisterHandle(ushort command, ReciveHandleDelegate action);
+
         void Execute(ushort command, Action<OutputPacketBuffer> build);
+
         void SendToGameServer(OutputPacketBuffer packet);
     }
 }
