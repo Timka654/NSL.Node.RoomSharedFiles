@@ -17,7 +17,11 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         // example for client handle
         private void testCommand_handle(PlayerInfo player, InputPacketBuffer buffer)
         {
-            Debug.Log($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
+#if UNITY_64
+            UnityEngine.Debug.Log($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
+#else
+            System.Console.WriteLine($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
+#endif
         }
     }
 }
