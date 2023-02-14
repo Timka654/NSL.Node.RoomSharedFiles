@@ -1,5 +1,5 @@
-$upFolder = [System.IO.Path]::Combine([System.IO.Directory]::GetCurrentDirectory(),"..");
-$files = [System.IO.Directory]::GetFiles(".", "*.example");
+$upFolder = [System.IO.Path]::Combine($PSScriptRoot,"..");
+$files = [System.IO.Directory]::GetFiles($PSScriptRoot, "*.example");
 
 foreach ($currentItemName in $files) {
 
