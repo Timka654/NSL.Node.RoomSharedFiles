@@ -1,12 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NSL.SocketCore.Utils.Buffer;
-
-namespace NSL.Node.RoomServer.Shared
+﻿namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public partial class GameInfo
     {
@@ -16,8 +8,8 @@ namespace NSL.Node.RoomServer.Shared
         {
             RoomInfo = roomInfo;
 
-            // example
-            // roomInfo.RegisterHandle(11, testCommand_handle);
+            // method must be implemented in client or server side, you can create one Initialize method for all sides
+            Initialize();
         }
     }
 }

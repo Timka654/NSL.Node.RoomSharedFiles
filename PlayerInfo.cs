@@ -1,10 +1,7 @@
-﻿using NSL.SocketCore.Utils;
-using NSL.SocketCore.Utils.Buffer;
+﻿using NSL.SocketCore.Utils.Buffer;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace NSL.Node.RoomServer.Shared
+namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public delegate void ReciveHandleDelegate(PlayerInfo nodePlayer, InputPacketBuffer buffer);
 

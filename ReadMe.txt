@@ -1,0 +1,2 @@
+Move the ".example" files to folder up and remove extension '.example' for full initialize project 
+Server solution have NSL.Node.RoomServer.Shared project with link to this project - you can change this link if need
