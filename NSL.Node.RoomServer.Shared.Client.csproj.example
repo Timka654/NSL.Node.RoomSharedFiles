@@ -6,7 +6,9 @@
 
 		<Version>$(VersionSuffix)</Version>
 		<Authors>Relife87</Authors>
-		<Configurations>Debug;Release;DebugExamples;ReleaseRoomServer;DebugRoomServer</Configurations>
+		<Configurations>Debug;Release</Configurations>
+		<BaseOutputPath>output~\bin</BaseOutputPath>
+		<BaseIntermediateOutputPath>output~\obj</BaseIntermediateOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,11 +30,6 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseRoomServer|AnyCPU'">
 	  <DefineConstants>$(DefineConstants)TRACE;SERVER</DefineConstants>
 	</PropertyGroup>
-
-	<!--this link to files-->
-	<ItemGroup>
-		<Compile Include="..\..\Assets\Scripts\Network\**\*.cs" /> 
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="NSL.SocketCore" Version="2023.2.5.1332" />
