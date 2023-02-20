@@ -17,6 +17,10 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         void Execute(ushort command, Action<OutputPacketBuffer> build);
 
-        void SendToGameServer(OutputPacketBuffer packet);
+        void SendToRoomServer(OutputPacketBuffer packet);
+
+        bool Broadcast(Action<OutputPacketBuffer> builder, ushort code);
+
+        bool Broadcast(Action<OutputPacketBuffer> builder);
     }
 }
