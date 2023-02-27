@@ -3,7 +3,7 @@ using System;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
 {
-    public interface IPlayerNetwork
+    public interface IPlayerNetwork : IDisposable
     {
         void Transport(Action<OutputPacketBuffer> build, ushort code);
 
