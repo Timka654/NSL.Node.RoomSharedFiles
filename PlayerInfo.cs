@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NSL.SocketCore.Utils;
+using System;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
 {

@@ -1,5 +1,6 @@
 ﻿using NSL.SocketCore.Utils.Buffer;
 using System;
+using System.Collections.Generic;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
 {
@@ -22,5 +23,6 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         bool Broadcast(Action<OutputPacketBuffer> builder, ushort code);
 
         bool Broadcast(Action<OutputPacketBuffer> builder);
+        IEnumerable<IPlayerNetwork> GetNodes();
     }
 }

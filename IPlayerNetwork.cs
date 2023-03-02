@@ -1,4 +1,5 @@
-﻿using NSL.SocketCore.Utils.Buffer;
+﻿using NSL.SocketCore.Utils;
+using NSL.SocketCore.Utils.Buffer;
 using System;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
@@ -10,5 +11,10 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         void Transport(Action<OutputPacketBuffer> build);
 
         void Send(OutputPacketBuffer packet, bool disposeOnSend = true);
+
+        ClientObjectBag ObjectBag { get; }
+
+        void InitializeObjectBag();
+
     }
 }
