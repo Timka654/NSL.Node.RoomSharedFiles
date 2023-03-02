@@ -23,6 +23,11 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         bool Broadcast(Action<OutputPacketBuffer> builder, ushort code);
 
         bool Broadcast(Action<OutputPacketBuffer> builder);
-        IEnumerable<IPlayerNetwork> GetNodes();
+
+        IEnumerable<PlayerInfo> GetNodes();
+
+        event Action<PlayerInfo> OnNodeConnect;
+
+        event Action OnRoomReady;
     }
 }
