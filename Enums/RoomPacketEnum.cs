@@ -10,6 +10,7 @@
         ReadyNode,
         ReadyNodeResult = ReadyNode,
         ReadyRoom,
-        Execute
+        Execute,
+        StartupInfoMessage
     }
 }

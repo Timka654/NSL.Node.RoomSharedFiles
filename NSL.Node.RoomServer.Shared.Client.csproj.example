@@ -32,11 +32,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NSL.SocketCore" Version="2023.2.16.49" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\NSL.Node.BridgeServer.Shared\NSL.Node.BridgeServer.Shared.csproj" />
+		<PackageReference Include="NSL.SocketCore" Version="2023.2.22.2331" />
 	</ItemGroup>
 
 </Project>
