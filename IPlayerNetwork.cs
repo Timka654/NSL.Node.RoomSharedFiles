@@ -6,7 +6,7 @@ using System;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
 {
-    public interface IPlayerNetwork : IDisposable
+    public interface INodeNetwork : IDisposable
     {
         void Transport(Action<OutputPacketBuffer> build, ushort code);
 

@@ -8,11 +8,11 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
     {
         void Broadcast(OutputPacketBuffer packet);
 
-        PlayerInfo GetPlayer(Guid id);
+        NodeInfo GetNode(Guid id);
 
         void SendTo(Guid nodeId, OutputPacketBuffer packet);
 
-        void SendTo(PlayerInfo player, OutputPacketBuffer packet, bool disposeOnSend = true);
+        void SendTo(NodeInfo node, OutputPacketBuffer packet, bool disposeOnSend = true);
 
         void RegisterHandle(ushort command, ReciveHandleDelegate action);
 
@@ -24,9 +24,9 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         bool Broadcast(Action<OutputPacketBuffer> builder);
 
-        IEnumerable<PlayerInfo> GetNodes();
+        IEnumerable<NodeInfo> GetNodes();
 
-        event Action<PlayerInfo> OnNodeConnect;
+        event Action<NodeInfo> OnNodeConnect;
 
         event Action OnRoomReady;
     }

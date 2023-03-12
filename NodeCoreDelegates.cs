@@ -2,4 +2,4 @@
 using NSL.SocketCore.Utils.Buffer;
 
 
-public delegate void ReciveHandleDelegate(PlayerInfo nodePlayer, InputPacketBuffer buffer);
+public delegate void ReciveHandleDelegate(NodeInfo nodeInfo, InputPacketBuffer buffer);

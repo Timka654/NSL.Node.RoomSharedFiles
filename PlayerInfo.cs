@@ -3,9 +3,9 @@ using System;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
 {
-    public class PlayerInfo
+    public partial class NodeInfo
     {
-        public IPlayerNetwork Network { get; }
+        public INodeNetwork Network { get; }
 
         public Guid Id { get; }
 
@@ -14,7 +14,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         public void InitializeObjectBag()
             => Network.InitializeObjectBag();
 
-        public PlayerInfo(IPlayerNetwork network, Guid id)
+        public NodeInfo(INodeNetwork network, Guid id)
         {
             Network = network;
             Id = id;
