@@ -29,5 +29,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         event Action<NodeInfo> OnNodeConnect;
 
         event Action OnRoomReady;
+
+        Guid LocalNodeId { get; }
     }
 }
