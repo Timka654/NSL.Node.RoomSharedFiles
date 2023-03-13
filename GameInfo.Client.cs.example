@@ -8,19 +8,59 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public partial class GameInfo
     {
+        private UnityNodeRoom<GameInfo> GameRoomInfo => RoomInfo as UnityNodeRoom<GameInfo>;
+
         private void Initialize()
         {
+            RoomInfo.OnNodeConnect += RoomInfo_OnNodeConnect;
+
             // example for client handle
-            RoomInfo.RegisterHandle(1, testCommand_handle);
+            RoomInfo.RegisterHandle(1, testServerCommand_handle);
+            RoomInfo.RegisterHandle(2, testServerCommand_handle);
+            RoomInfo.RegisterHandle(3, testServerCommand_handle);
+            RoomInfo.RegisterHandle(4, testServerCommand_handle);
+            RoomInfo.RegisterHandle(5, testServerCommand_handle);
+            RoomInfo.RegisterHandle(6, testServerCommand_handle);
+            RoomInfo.RegisterHandle(7, testServerCommand_handle);
+
+
+            RoomInfo.RegisterHandle(11, testP2PCommand_handle);
+            RoomInfo.RegisterHandle(12, testP2PCommand_handle);
+            RoomInfo.RegisterHandle(13, testP2PCommand_handle);
+            RoomInfo.RegisterHandle(14, testP2PCommand_handle);
+            RoomInfo.RegisterHandle(15, testP2PCommand_handle);
+            RoomInfo.RegisterHandle(16, testP2PCommand_handle);
+            RoomInfo.RegisterHandle(17, testP2PCommand_handle);
+        }
+
+        private void RoomInfo_OnNodeConnect(NodeInfo obj)
+        {
+            obj.InitializeObjectBag();
         }
 
         // example for client handle
-        private void testCommand_handle(PlayerInfo player, InputPacketBuffer buffer)
+        private void testServerCommand_handle(NodeInfo player, InputPacketBuffer buffer)
         {
+            buffer.Seek(-2, System.IO.SeekOrigin.Current);
+            var cmd = buffer.ReadUInt16();
+            // on test with default example must missed with command 3(no exists node)
 #if UNITY_64
-            UnityEngine.Debug.Log($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
+            UnityEngine.Debug.Log($"receive testServerCommand({cmd}) from {player?.Id.ToString() ?? "Server"}");
 #else
-            System.Console.WriteLine($"receive testCommand from {player?.Id.ToString() ?? "Server"}");
+            System.Console.WriteLine($"receive testServerCommand({cmd}) from {player?.Id.ToString() ?? "Server"}");
+#endif
+        }
+
+        // example for p2p handle
+        private void testP2PCommand_handle(NodeInfo player, InputPacketBuffer buffer)
+        {
+            buffer.Seek(-2, System.IO.SeekOrigin.Current);
+            var cmd = buffer.ReadUInt16();
+            // on test with default example must missed with command 3(no exists node)
+#if UNITY_64
+            UnityEngine.Debug.Log($"receive testP2PCommand({cmd}) from {player?.Id.ToString() ?? "Server"}");
+#else
+            System.Console.WriteLine($"receive testP2PCommand({cmd}) from {player?.Id.ToString() ?? "Server"}");
 #endif
         }
     }
