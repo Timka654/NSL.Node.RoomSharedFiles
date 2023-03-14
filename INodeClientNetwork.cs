@@ -8,11 +8,11 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public interface INodeClientNetwork : IDisposable
     {
-        void Send(Action<DgramOutputPacketBuffer> build, ushort code, UDPChannelEnum channel = UDPChannelEnum.ReliableOrdered);
+        void Send(ushort code,Action<DgramOutputPacketBuffer> build,  UDPChannelEnum channel = UDPChannelEnum.ReliableOrdered);
 
         void Send(Action<DgramOutputPacketBuffer> build, UDPChannelEnum channel = UDPChannelEnum.ReliableOrdered);
         
-        void Send(Action<DgramOutputPacketBuffer> build, ushort code);
+        void Send(ushort code, Action<DgramOutputPacketBuffer> build);
 
         void Send(Action<DgramOutputPacketBuffer> build);
 
