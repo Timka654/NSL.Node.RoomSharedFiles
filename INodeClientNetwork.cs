@@ -1,5 +1,4 @@
 ﻿using NSL.SocketCore.Utils;
-using NSL.SocketCore.Utils.Buffer;
 using NSL.UDP;
 using NSL.UDP.Enums;
 using System;
@@ -25,5 +24,6 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         void InitializeObjectBag();
 
+        void SetObjectOwner(INodeOwneredObject _object);
     }
 }
