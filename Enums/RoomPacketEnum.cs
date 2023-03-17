@@ -7,10 +7,10 @@
         ChangeNodeList,
         Transport,
         Broadcast,
-        ReadyNode,
-        ReadyNodeResult = ReadyNode,
+        ReadyNodeRequest,
         ReadyRoom,
         Execute,
-        StartupInfoMessage
+        StartupInfoMessage,
+        Response
     }
 }
