@@ -9,7 +9,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         public Guid Id { get; }
 
-        ClientObjectBag ObjectBag => Network.ObjectBag;
+        public ClientObjectBag ObjectBag => Network.ObjectBag;
 
         public void InitializeObjectBag()
             => Network.InitializeObjectBag();
