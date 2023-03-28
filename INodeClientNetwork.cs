@@ -1,5 +1,6 @@
 ﻿using NSL.SocketCore.Utils;
 using NSL.UDP;
+using NSL.UDP.Client;
 using NSL.UDP.Enums;
 using System;
 
@@ -25,5 +26,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         void InitializeObjectBag();
 
         void SetObjectOwner(INodeOwneredObject _object);
+
+        UDPClient<UDPNodeServerNetworkClient> UDPClient { get; }
     }
 }
