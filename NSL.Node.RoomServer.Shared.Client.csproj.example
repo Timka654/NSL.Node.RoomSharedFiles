@@ -33,7 +33,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="NSL.SocketCore" Version="*" />
-		<PackageReference Include="NSL.UDP" Version="*" />
+		<PackageReference Include="NSL.UDP.Client" Version="*" />
 	</ItemGroup>
 
 </Project>
