@@ -37,10 +37,14 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         void SendToServer(OutputPacketBuffer packet, bool disposeOnSend = true);
         void SendToServer(ushort command, Action<OutputPacketBuffer> build);
 
+        void Dispose();
+
 
         IEnumerable<NodeInfo> GetNodes();
 
         NodeInfo GetNode(Guid id);
+        void SendLobbyFinishRoom(byte[] data = null);
+        void SendLobbyRoomMessage(byte[] data);
 
         event Action<NodeInfo> OnNodeConnect;
 
