@@ -25,5 +25,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         void InitializeObjectBag();
 
         void SetObjectOwner(INodeOwneredObject _object);
+
+        INodeNetworkClient UDPClient { get; }
     }
 }
