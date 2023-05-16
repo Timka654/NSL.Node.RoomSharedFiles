@@ -37,6 +37,8 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         void SendToServer(OutputPacketBuffer packet, bool disposeOnSend = true);
         void SendToServer(ushort command, Action<OutputPacketBuffer> build);
 
+        void Dispose();
+
 
         IEnumerable<NodeInfo> GetNodes();
 
