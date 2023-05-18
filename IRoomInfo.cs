@@ -39,6 +39,8 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         void Dispose();
 
+        void Dispose(byte[] data);
+
 
         IEnumerable<NodeInfo> GetNodes();
 
