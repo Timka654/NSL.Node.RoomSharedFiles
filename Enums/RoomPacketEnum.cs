@@ -2,7 +2,8 @@
 {
     public enum RoomPacketEnum
     {
-        SignSession = 1,
+        Response = 1,
+        SignSession,
         SignSessionResult = SignSession,
         ChangeNodeList,
         Transport,
@@ -11,6 +12,5 @@
         ReadyRoom,
         Execute,
         StartupInfoMessage,
-        Response
     }
 }
