@@ -39,14 +39,10 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         void Dispose();
 
-        void Dispose(byte[] data);
-
 
         IEnumerable<NodeInfo> GetNodes();
 
         NodeInfo GetNode(Guid id);
-        void SendLobbyFinishRoom(byte[] data = null);
-        void SendLobbyRoomMessage(byte[] data);
 
         event Action<NodeInfo> OnNodeConnect;
 
