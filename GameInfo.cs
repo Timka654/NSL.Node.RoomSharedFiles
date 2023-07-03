@@ -1,6 +1,6 @@
 ﻿namespace NSL.Node.RoomServer.Shared.Client.Core
 {
-    public partial class GameInfo
+    public partial class GameInfo : IRoomSession
     {
 #if SERVER
         public IServerRoomInfo RoomInfo { get; }
