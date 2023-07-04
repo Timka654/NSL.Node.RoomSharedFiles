@@ -26,7 +26,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="NSL.UDP.Client" Version="2023.7.2.1403" />
+	  <PackageReference Include="NSL.UDP" Version="2023.7.2.1403" />
 	</ItemGroup>
 
 </Project>
