@@ -5,7 +5,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public partial class NodeInfo
     {
-        public INodeClientNetwork Network { get; }
+        public INodeClientNetwork Network { get; private set; }
 
         public Guid Id { get; }
 
@@ -18,6 +18,13 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         {
             Network = network;
             Id = id;
+        }
+
+        public NodeInfo ChangeTo(INodeClientNetwork another)
+        {
+            Network = another;
+
+            return this;
         }
     }
 }

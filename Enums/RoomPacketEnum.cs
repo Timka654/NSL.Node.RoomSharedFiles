@@ -3,14 +3,17 @@
     public enum RoomPacketEnum
     {
         Response = 1,
-        SignSession,
-        SignSessionResult = SignSession,
-        ChangeNodeList,
-        Transport,
-        Broadcast,
+        SignSessionRequest,
+        TransportMessage,
+        BroadcastMessage,
         ReadyNodeRequest,
-        ReadyRoom,
-        Execute,
-        StartupInfoMessage,
+        ReadyRoomMessage,
+        ExecuteMessage,
+        NodeConnectMessage,
+        NodeConnectionLostMessage,
+        NodeDisconnectMessage,
+        NodeChangeEndPointMessage,
+        DisconnectMessage,
+        RoomDestroyMessage
     }
 }
