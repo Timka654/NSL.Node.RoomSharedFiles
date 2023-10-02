@@ -26,6 +26,8 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         void SetObjectOwner(INodeOwneredObject _object);
 
+        void Disconnect();
+
         INodeNetworkClient UDPClient { get; }
     }
 }
