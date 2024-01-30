@@ -18,7 +18,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         bool Broadcast(ushort code, UDPChannelEnum channel, Action<DgramOutputPacketBuffer> builder);
 
         bool Broadcast(Action<DgramOutputPacketBuffer> builder);
-        bool Broadcast(UDPChannelEnum channel,Action<DgramOutputPacketBuffer> builder);
+        bool Broadcast(UDPChannelEnum channel, Action<DgramOutputPacketBuffer> builder);
 
 
         bool SendTo(Guid nodeId, DgramOutputPacketBuffer packet, bool disposeOnSend = true); // +
@@ -51,6 +51,10 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         event Action<NodeInfo> OnNodeDisconnect;
 
         event Action<NodeInfo> OnNodeConnectionLost;
+
+        event Action<NodeInfo> OnRecoverySession;
+
+        void RecoverySession(NodeInfo node);
 
         Guid LocalNodeId { get; }
     }

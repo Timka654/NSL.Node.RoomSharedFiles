@@ -16,5 +16,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
             where TValue : IConvertible;
 
         void Dispose(byte[] data);
+
+        bool ValidateSession(NodeInfo node);
     }
 }
