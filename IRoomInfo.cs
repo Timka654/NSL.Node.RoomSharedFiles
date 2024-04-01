@@ -8,6 +8,9 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public interface IRoomInfo
     {
+
+        public delegate void OnNodeDisconnectDelegate(NodeInfo node, bool manualDisconnected);
+
         void RegisterHandle(ushort command, ReciveHandleDelegate action);
 
 
@@ -48,11 +51,12 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         event Action OnRoomReady;
 
-        event Action<NodeInfo> OnNodeDisconnect;
+        event OnNodeDisconnectDelegate OnNodeDisconnect;
 
         event Action<NodeInfo> OnNodeConnectionLost;
 
         event Action<NodeInfo> OnRecoverySession;
+
 
         void RecoverySession(NodeInfo node);
 
