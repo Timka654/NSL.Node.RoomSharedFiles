@@ -26,10 +26,10 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(Configuration)'!='Unity' and '$(Configuration)'!='UnityDebug'">
-		<PackageReference Include="NSL.Extensions.Session" Version="2024.4.11.2346" />
-		<PackageReference Include="NSL.Generators.BinaryTypeIOGenerator" Version="2024.4.11.2346" />
-		<PackageReference Include="NSL.Generators.BinaryTypeIOGenerator.Attributes" Version="2024.4.11.2346" />
-		<PackageReference Include="NSL.UDP" Version="2024.4.11.2346" />
+		<PackageReference Include="NSL.Extensions.Session" Version="2024.4.23.1244" />
+		<PackageReference Include="NSL.Generators.BinaryTypeIOGenerator" Version="2024.4.23.1244" />
+		<PackageReference Include="NSL.Generators.BinaryTypeIOGenerator.Attributes" Version="2024.4.23.1244" />
+		<PackageReference Include="NSL.UDP" Version="2024.4.23.1244" />
 	</ItemGroup>
 
 
