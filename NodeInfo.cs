@@ -26,5 +26,10 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
             return this;
         }
+
+        public override string ToString()
+        {
+            return $"(Node: {Id})";
+        }
     }
 }
