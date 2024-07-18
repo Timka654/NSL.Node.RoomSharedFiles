@@ -13,6 +13,10 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         
         void Send(ushort code, Action<DgramOutputPacketBuffer> build);
 
+        //void Send(byte[] packetBody);
+
+        //void Send(byte[] packetBody, int offset, int len);
+
         void Send(Action<DgramOutputPacketBuffer> build);
 
         void Send(DgramOutputPacketBuffer packet, UDPChannelEnum channel = UDPChannelEnum.ReliableOrdered, bool disposeOnSend = true);

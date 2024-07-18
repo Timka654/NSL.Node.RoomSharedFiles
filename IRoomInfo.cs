@@ -3,13 +3,16 @@ using NSL.UDP;
 using NSL.UDP.Enums;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NSL.Node.RoomServer.Shared.Client.Core
 {
     public interface IRoomInfo
     {
 
-        public delegate void OnNodeDisconnectDelegate(NodeInfo node, bool manualDisconnected);
+        public delegate Task OnNodeDisconnectDelegate(NodeInfo node, bool manualDisconnected);
+
+        public delegate Task OnNodeDelegate(NodeInfo node);
 
         void RegisterHandle(ushort command, ReciveHandleDelegate action);
 
@@ -28,6 +31,8 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         bool SendTo(Guid nodeId, UDPChannelEnum channel, DgramOutputPacketBuffer packet, bool disposeOnSend = true); // +
 
         bool SendTo(NodeInfo node, DgramOutputPacketBuffer packet, bool disposeOnSend = true);
+        bool SendTo(NodeInfo node, byte[] buffer);
+        bool SendTo(NodeInfo node, byte[] buffer, int offset, int len);
         bool SendTo(NodeInfo node, UDPChannelEnum channel, DgramOutputPacketBuffer packet, bool disposeOnSend = true);
 
         bool SendTo(Guid nodeId, ushort command, Action<DgramOutputPacketBuffer> build);
@@ -47,18 +52,18 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         NodeInfo GetNode(Guid id);
 
-        event Action<NodeInfo> OnNodeConnect;
+        event OnNodeDelegate OnNodeConnect;
 
-        event Action OnRoomReady;
+        event Func<Task> OnRoomReady;
 
         event OnNodeDisconnectDelegate OnNodeDisconnect;
 
-        event Action<NodeInfo> OnNodeConnectionLost;
+        event OnNodeDelegate OnNodeConnectionLost;
 
-        event Action<NodeInfo> OnRecoverySession;
+        event OnNodeDelegate OnRecoverySession;
 
 
-        void RecoverySession(NodeInfo node);
+        Task RecoverySession(NodeInfo node);
 
         Guid LocalNodeId { get; }
     }
