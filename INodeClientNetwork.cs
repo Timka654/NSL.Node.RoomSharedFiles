@@ -23,7 +23,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         void Send(DgramOutputPacketBuffer packet, bool disposeOnSend = true);
 
         ClientObjectBag ObjectBag { get; }
-        Guid NodeId { get; }
+        string NodeId { get; }
         bool IsLocalNode { get; }
 
         void InitializeObjectBag();

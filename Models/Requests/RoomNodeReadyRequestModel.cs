@@ -12,6 +12,6 @@ namespace NSL.Node.Core.Models.Requests
     {
         public int ConnectedNodesCount { get; set; }
 
-        public List<Guid> ConnectedNodes { get; set; }
+        public List<string> ConnectedNodes { get; set; }
     }
 }

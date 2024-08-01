@@ -10,7 +10,7 @@ namespace NSL.Node.Core.Models.Message
     [BinaryIOType, BinaryIOMethodsFor]
     public partial class ConnectNodeMessageModel
     {
-        public Guid NodeId { get; set; }
+        public string NodeId { get; set; }
         public string Token { get; set; }
         public string EndPoint { get; set; }
     }

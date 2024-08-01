@@ -27,16 +27,16 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
         bool Broadcast(UDPChannelEnum channel, Action<DgramOutputPacketBuffer> builder);
 
 
-        bool SendTo(Guid nodeId, DgramOutputPacketBuffer packet, bool disposeOnSend = true); // +
-        bool SendTo(Guid nodeId, UDPChannelEnum channel, DgramOutputPacketBuffer packet, bool disposeOnSend = true); // +
+        bool SendTo(string nodeId, DgramOutputPacketBuffer packet, bool disposeOnSend = true); // +
+        bool SendTo(string nodeId, UDPChannelEnum channel, DgramOutputPacketBuffer packet, bool disposeOnSend = true); // +
 
         bool SendTo(NodeInfo node, DgramOutputPacketBuffer packet, bool disposeOnSend = true);
         bool SendTo(NodeInfo node, byte[] buffer);
         bool SendTo(NodeInfo node, byte[] buffer, int offset, int len);
         bool SendTo(NodeInfo node, UDPChannelEnum channel, DgramOutputPacketBuffer packet, bool disposeOnSend = true);
 
-        bool SendTo(Guid nodeId, ushort command, Action<DgramOutputPacketBuffer> build);
-        bool SendTo(Guid nodeId, ushort command, UDPChannelEnum channel, Action<DgramOutputPacketBuffer> build);
+        bool SendTo(string nodeId, ushort command, Action<DgramOutputPacketBuffer> build);
+        bool SendTo(string nodeId, ushort command, UDPChannelEnum channel, Action<DgramOutputPacketBuffer> build);
 
         bool SendTo(NodeInfo node, ushort command, Action<DgramOutputPacketBuffer> build);
         bool SendTo(NodeInfo node, ushort command, UDPChannelEnum channel, Action<DgramOutputPacketBuffer> build);
@@ -50,7 +50,7 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         IEnumerable<NodeInfo> GetNodes();
 
-        NodeInfo GetNode(Guid id);
+        NodeInfo GetNode(string id);
 
         event OnNodeDelegate OnNodeConnect;
 
@@ -65,6 +65,6 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
 
         Task RecoverySession(NodeInfo node);
 
-        Guid LocalNodeId { get; }
+        string LocalNodeId { get; }
     }
 }

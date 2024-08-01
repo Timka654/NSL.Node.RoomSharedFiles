@@ -7,14 +7,14 @@ namespace NSL.Node.RoomServer.Shared.Client.Core
     {
         public INodeClientNetwork Network { get; private set; }
 
-        public Guid Id { get; }
+        public string Id { get; }
 
         public ClientObjectBag ObjectBag => Network.ObjectBag;
 
         public void InitializeObjectBag()
             => Network.InitializeObjectBag();
 
-        public NodeInfo(INodeClientNetwork network, Guid id)
+        public NodeInfo(INodeClientNetwork network, string id)
         {
             Network = network;
             Id = id;
