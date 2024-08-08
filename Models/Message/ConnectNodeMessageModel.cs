@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NSL.Node.Core.Models.Message
 {
-    [BinaryIOType, BinaryIOMethodsFor]
+    [NSLBIOType]
     public partial class ConnectNodeMessageModel
     {
         public string NodeId { get; set; }

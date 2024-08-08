@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NSL.Node.Core.Models.Response
 {
-    [BinaryIOType, BinaryIOMethodsFor]
+    [NSLBIOType]
     public partial class RoomNodeSignInResponseModel
     {
         public bool Success { get; set; }

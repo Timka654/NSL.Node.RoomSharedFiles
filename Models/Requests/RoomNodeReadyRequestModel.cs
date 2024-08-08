@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NSL.Node.Core.Models.Requests
 {
-    [BinaryIOType, BinaryIOMethodsFor]
+    [NSLBIOType]
     public partial class RoomNodeReadyRequestModel
     {
         public int ConnectedNodesCount { get; set; }
